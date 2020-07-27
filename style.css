@@ -1,25 +1,25 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
     font-weight: normal;
 }
 
 body {
-    padding: 0;
+    padding: 0; /* So the background can be filled throught the whole screen */
     margin: 0;
-    background: linear-gradient(to right, #00AAFF, #00FF6C)
+    background: linear-gradient(to right, #5d2db8f1, #128a6c)
 }
 
-.calculator-grid{
+.grid{
     display: grid;
     justify-content: center;
-    align-content: center;
-    min-height: 100vh;
+    align-content: center; /* Inorder everything inside this class is centered */
+    min-height: 100vh; /* Fill 100% of the screen */
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-.calculator-grid > button {
+.grid > button {
     cursor: pointer;
     font-size: 2rem;
     border: 1px solid white;
@@ -27,32 +27,32 @@ body {
     background-color: rgba(225, 225, 225, .75);
 }
 
-.calculator-grid > button:hover {
+.grid > button:hover {
     background-color: rgba(225, 225, 225, .9);
 }
 
-.span-two {
+.double-span {
     grid-column: span 2;
 }
 
 .output {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* -1 is the last column in the row */
     background-color: rgba(0, 0, 0, .75);
     display: flex;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: space-around; /* around pushes the text closer to each other instead of between */
     flex-direction: column;
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
 }
 
-.output .previous-operand {
-    color: rgb(255, 255, 255, 0.75);
+.output .prev-op {
+    color: rgb(255, 255, 255, .75);
     font-size: 1.5rem;
 }
 
-.output .current-operand {
+.output .current-op {
     color: white;
     font-size: 2.5rem;
 }
